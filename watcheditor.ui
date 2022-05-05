@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>watchEditor</class>
+ <widget class="QMainWindow" name="watchEditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Technicien Domo-Secours</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>logo-domo.png</normaloff>logo-domo.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>450</y>
+      <width>501</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>NOM</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>501</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>logo-domo.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="deco">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>0</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Deconnexion</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>450</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#D96E2E;&quot;&gt;Montre non OK!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <zorder>label_3</zorder>
+   <zorder>label_2</zorder>
+   <zorder>deco</zorder>
+   <zorder>label</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>500</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <widget class="QMenu" name="menuGestion_Client">
+     <property name="title">
+      <string>Gestion Client</string>
+     </property>
+     <addaction name="actionAjouter_client"/>
+     <addaction name="actionSupprimer_client"/>
+     <addaction name="actionModifier_Client"/>
+    </widget>
+    <widget class="QMenu" name="menuGestion_montre">
+     <property name="title">
+      <string>Gestion montre</string>
+     </property>
+     <addaction name="actionModifier_wifi_montre"/>
+     <addaction name="actionModifier_MQTT_montre"/>
+     <addaction name="actionModifier_NTP_montre"/>
+    </widget>
+    <widget class="QMenu" name="menuGestion_technicien">
+     <property name="title">
+      <string>Gestion technicien</string>
+     </property>
+     <addaction name="actionAjouter_technicien"/>
+     <addaction name="actionSupprimer_technicien"/>
+     <addaction name="actionRemplacer_MDP"/>
+    </widget>
+    <addaction name="menuGestion_Client"/>
+    <addaction name="menuGestion_montre"/>
+    <addaction name="menuGestion_technicien"/>
+   </widget>
+   <widget class="QMenu" name="menuAide">
+    <property name="title">
+     <string>Aide</string>
+    </property>
+    <addaction name="actionA_propos"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuAide"/>
+  </widget>
+  <action name="actionAjouter_client">
+   <property name="text">
+    <string>Ajouter</string>
+   </property>
+  </action>
+  <action name="actionModifier_Client">
+   <property name="text">
+    <string>Modifier</string>
+   </property>
+  </action>
+  <action name="actionModifier_wifi_montre">
+   <property name="text">
+    <string>Modifier wifi</string>
+   </property>
+  </action>
+  <action name="actionModifier_MQTT_montre">
+   <property name="text">
+    <string>Modifier MQTT</string>
+   </property>
+  </action>
+  <action name="actionModifier_NTP_montre">
+   <property name="text">
+    <string>Modifier NTP</string>
+   </property>
+  </action>
+  <action name="actionA_propos">
+   <property name="text">
+    <string>A propos</string>
+   </property>
+  </action>
+  <action name="actionSupprimer_client">
+   <property name="text">
+    <string>Supprimer</string>
+   </property>
+  </action>
+  <action name="actionAjouter_technicien">
+   <property name="text">
+    <string>Ajouter</string>
+   </property>
+  </action>
+  <action name="actionSupprimer_technicien">
+   <property name="text">
+    <string>Supprimer</string>
+   </property>
+  </action>
+  <action name="actionRemplacer_MDP">
+   <property name="text">
+    <string>Remplacer MDP</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
