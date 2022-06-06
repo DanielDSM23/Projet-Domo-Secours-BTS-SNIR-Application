@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../../Desktop/logo-domo.png</file>
+        <file>logo-domo2.png</file>
+    </qresource>
+</RCC>

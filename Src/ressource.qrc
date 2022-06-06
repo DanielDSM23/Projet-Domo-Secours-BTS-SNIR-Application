@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>images/deco.png</file>
+        <file>images/logo-domo.png</file>
+        <file>images/logo-domo2.png</file>
+        <file>images/logo-domo3.png</file>
+        <file>images/auth.png</file>
+    </qresource>
+</RCC>

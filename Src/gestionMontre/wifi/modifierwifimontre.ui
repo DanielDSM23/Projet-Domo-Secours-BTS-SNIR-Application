@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>modifierWifiMontre</class>
+ <widget class="QDialog" name="modifierWifiMontre">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>354</width>
+    <height>116</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>354</width>
+    <height>116</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>354</width>
+    <height>116</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Gestion Montre - Modifier WiFi</string>
+  </property>
+  <widget class="QLineEdit" name="ssid">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>10</y>
+     <width>231</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>SSID</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="password">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>40</y>
+     <width>231</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Mot de passe</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="annuler">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>80</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Annuler</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="modifier">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>80</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Modifier</string>
+   </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>-70</y>
+     <width>451</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../build-connectbdd-Desktop_Qt_5_9_6_MinGW_32bit-Debug/logo-domo3.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>ssid</zorder>
+  <zorder>password</zorder>
+  <zorder>annuler</zorder>
+  <zorder>modifier</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
