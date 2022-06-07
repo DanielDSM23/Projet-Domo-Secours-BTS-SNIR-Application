@@ -12,13 +12,13 @@ about::about(QWidget *parent) :
 
 about::~about()
 {
-    delete ui;
+    delete ui; //suppression de l'objet ui
 }
 
 
 
 void about::on_pushButton_clicked()
 {
-    this->~about();
+    this->~about(); //appel du destructeur
 }
 
