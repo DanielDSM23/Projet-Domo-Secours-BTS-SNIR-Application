@@ -1,26 +1,26 @@
 #include "ui_watcheditor.h"
 #include "watcheditor.h"
-#include <QDebug>
+
 watchEditor::watchEditor(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::watchEditor)
 {
     ui->setupUi(this);
-    QPixmap pix("./logo-domo.png");
+    QPixmap pix("./logo-domo.png"); 
     ui->label_3->setPixmap(pix);
     ui->label_3->setAlignment(Qt::AlignCenter);
     ui->label_2->setAlignment(Qt::AlignCenter);
-    ui->menuGestion_montre->setEnabled(false);
-    timer = new QTimer();
-    timerUsb = new QTimer();
-    timer->setInterval(minute(1));
-    timerUsb->setInterval(1000);
-    connect(this, SIGNAL(clicked()), this ,SLOT(exitProg()));
-    connect(timer, SIGNAL(timeout()), this, SLOT(deconnexion()));
-    connect(timerUsb, SIGNAL(timeout()), this, SLOT(verifyUsb()));
+    ui->menuGestion_montre->setEnabled(false); //Menu gestion Montre grisé
+    timer = new QTimer(); //instanciation dynamique de QTimer
+    timerUsb = new QTimer(); //instanciation dynamique de QTimer
+    timer->setInterval(minute(1)); //autre instanciation dynamique de QTimer
+    timerUsb->setInterval(1000); //1s 
+    connect(this, SIGNAL(clicked()), this ,SLOT(exitProg())); //slot lorsque l'on clique sur la croix 
+    connect(timer, SIGNAL(timeout()), this, SLOT(deconnexion())); //si les minutes sont ecoulées une deconnexion est crée
+    connect(timerUsb, SIGNAL(timeout()), this, SLOT(verifyUsb())); //touts les secondes verifyUsb est executée
     timer->start();
     timerUsb->start();
-    serialInfoList = QSerialPortInfo::availablePorts();
+    serialInfoList = QSerialPortInfo::availablePorts(); //instanciation 
         if (serialInfoList.size() < 0)
         {
             portCom = nullptr;
@@ -30,12 +30,12 @@ watchEditor::watchEditor(QWidget *parent) :
             for (int i=0; i<serialInfoList.size(); i++)
             {
                 serialInfo = serialInfoList.at(i);
-                if(serialInfo.manufacturer() == "wch.cn" && serialInfo.description() == "USB-SERIAL CH340"
+                if(serialInfo.manufacturer() == "wch.cn" && serialInfo.description() == "USB-SERIAL CH340" //verifie si les deux valeurs existent pour un peripherique
                         && serialInfo.vendorIdentifier() == 6790 && serialInfo.productIdentifier() == 29987){
-                    portCom = serialInfo.portName();
+                    portCom = serialInfo.portName(); //sauvegarde dans la variable QString COMX
                     isWatchConnected = true;
                     atAddr = i;
-                    ui->label->setText("<font color=\"#15B7B9\">Montre OK!</font>");
+                    ui->label->setText("<font color=\"#15B7B9\">Montre OK!</font>"); //met le texte Montre OK.
                     ui->label->setAlignment(Qt::AlignCenter);
                     ui->menuGestion_montre->setEnabled(true);
                 }
@@ -45,13 +45,13 @@ watchEditor::watchEditor(QWidget *parent) :
 
 watchEditor::~watchEditor()
 {
-    delete timerUsb;
-    delete timer;
-    delete ui;
+    delete timerUsb; //suppression de l'objet timerUsb
+    delete timer; //suppression de l'objet timer
+    delete ui; //suppression de l'objet ui
 }
 
 
-void watchEditor::setNom(QString nom){
+void watchEditor::setNom(QString nom){ //setteur du nom du technicien 
     nom = "Technicien : "+nom;
     ui->label_2->setText(nom);
     this->setWindowTitle("Technicien Domo-Secours - "+nom);
@@ -147,7 +147,7 @@ void watchEditor::on_actionRemplacer_MDP_triggered()
     timer->setInterval(minute(10));
 }
 
-void watchEditor::verifyUsb(){
+void watchEditor::verifyUsb(){ //verification du branchement de la montre
     if(serialInfo.isValid() == false){
         portCom = nullptr;
         isWatchConnected = false;
