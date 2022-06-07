@@ -6,7 +6,8 @@ about::about(QWidget *parent) :
     ui(new Ui::about)
 {
     ui->setupUi(this);
-    connect(this, SIGNAL(clicked()), ui->pushButton ,SIGNAL(clicked()));
+    connect(this, SIGNAL(clicked()), ui->pushButton ,SIGNAL(clicked())); //creation d'un slot lorsque l'on ferme la fenêtre 
+                                                                         //il appelle donc la methode on_pushButton_clicked()
 }
 
 about::~about()
