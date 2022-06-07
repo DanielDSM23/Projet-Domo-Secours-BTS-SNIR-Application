@@ -4,8 +4,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    connexionBDD w;
-    w.show();
+    connexionBDD w; //instanciation de la classe connexionBDD
+    w.show(); //methode show
 
     return a.exec();
 }
