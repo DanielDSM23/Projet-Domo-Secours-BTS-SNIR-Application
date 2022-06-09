@@ -126,7 +126,7 @@ void ajouterClient::on_ajouter_clicked()
         msg->information(this, tr("Client.e ajouté.e"),tr(msgInfo.toUtf8()+"\nMail envoyé avec succès"));
         if (file.exists())
         {
-           system("del \"C:\\Users\\Daniel\\AppData\\Local\\VirtualStore\\Program Files (x86)\\Domo-Secours App\\message.txt\"");
+           system("del \"C:\\Users\\%username%\\AppData\\Local\\VirtualStore\\Program Files (x86)\\Domo-Secours App\\message.txt\"");
         }
         this->~ajouterClient();
     }
